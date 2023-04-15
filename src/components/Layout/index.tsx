@@ -1,0 +1,15 @@
+import React from "react";
+/* import Header from "./header"; */
+import Sidebar from "./Sidebar";
+
+const Layout:React.FC<{children:React.ReactElement}> = ({ children }) => (
+  <div className="grid grid-cols-layout h-screen dark:bg-gray-900 text-gray-500 dark:text-gray-400">
+    <Sidebar />
+    <main className="mt-20">
+      {children}
+    </main>
+  </div>
+
+);
+
+export default Layout;
