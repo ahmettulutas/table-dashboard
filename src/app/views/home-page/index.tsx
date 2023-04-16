@@ -13,12 +13,10 @@ const HomePage:React.FC = () => {
         loading ?
           <LoadingSpinner />
           :
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-3 container">
-            <section className="grid gap-4 grid-cols-1 col-span-2">
-              <div>Content here</div>
-            </section>
+          <>
+            <div>Content here</div>
             <ErrorModal />
-          </div>
+          </>
       }
     </Layout>
   );

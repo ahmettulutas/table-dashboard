@@ -13,10 +13,12 @@ module.exports = {
     extend: {
       gridTemplateCols: {
         layout: "auto 1fr"
+      },
+      colors: {
+        primaryGray: "#EFEFEF"
       }
     },
     container: {
-      center: true,
       width: "90%",
       padding: {
         DEFAULT: "1rem"
