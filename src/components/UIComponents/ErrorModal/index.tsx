@@ -6,7 +6,7 @@ import Cross from "~/assets/icons/cross.svg";
 
 const ErrorModal:React.FC = () => {
   const [showModal, setShowModal] = React.useState<boolean>(false);
-  const error = useAppSelector(state => state.coronaData.error);
+  const error = useAppSelector(state => state.postSlice.posts.error);
 
   useEffect(() => {
     if (error) setShowModal(true);
@@ -22,7 +22,7 @@ const ErrorModal:React.FC = () => {
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     <div className="flex items-center justify-between pt-6 p-3 border-b border-solid border-slate-200 rounded-t relative">
-                      <h3 className="text-xl font-semibold text-red-400">{t("msg.errorOccured")}</h3>
+                      <h3 className="text-xl font-semibold text-red-400 mt-1">{t("msg.errorOccured")}</h3>
                       <Cross className="absolute right-2 top-2 w-5 h-5 cursor-pointer hover:animate-pulse" onClick={() => setShowModal(false)}/>
                     </div>
                     <div className="relative p-6 flex-auto">

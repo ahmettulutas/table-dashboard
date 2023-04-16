@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { LoadingSpinner } from "~/components/UIComponents";
-import { useAppDispatch } from "~/utils/hooks";
+import { getPosts } from "~/store/api/redux/posts/reducers";
 import NotFound from "./views/404";
 
 const HomePage = React.lazy(() => import("./views/home-page"));
 
 const App = () => {
-  const dispatch = useAppDispatch();
 
-  /*  useEffect(() => {
-
-  }, []); */
+  useEffect(() => {
+    getPosts({ offset: 1, limit: 110 });
+  }, []);
 
   return (
     <Routes>

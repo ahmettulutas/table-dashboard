@@ -1,12 +1,12 @@
 # Table-Dashboard
 
-This is a React application that displays a map of Covid cases around the world.
+This is a React application that displays a set of data with a report table.
 
 Installation and Usage
 To use this application, first clone the repository to your local machine:
 
 ```
-git clone https://github.com/YOUR-USERNAME/covid-map.git
+git clone hhttps://github.com/ahmettulutas/table-dashboard.git
 ```
 
 Then, install the dependencies using npm or yarn:

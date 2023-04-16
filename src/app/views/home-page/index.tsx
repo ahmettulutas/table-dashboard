@@ -5,7 +5,8 @@ import ErrorModal from "~/components/UIComponents/ErrorModal";
 import { useAppSelector } from "~/utils/hooks";
 
 const HomePage:React.FC = () => {
-  const loading = false;
+  const { loading } = useAppSelector(state => state.postSlice.posts);
+
   return (
     <Layout>
       {
