@@ -1,3 +1,4 @@
+import { enums, Enums } from "~/lib/enums"
 import { RequestModel } from "../../types"
 
 export type PostResponse =  {
@@ -11,12 +12,14 @@ export type Response = {
     datas: Post[]
     totalRecords: number
 }
+export type PostStatus = keyof typeof enums.postStatus;
+export type PostType = keyof typeof enums.postType;
 
 export type Post = {
     number: string
-    post_status: string
+    post_status: PostStatus
     post_desi: string
-    post_type: string
+    post_type: PostType
     post_package: string
     created_at: string
     sender_name: string

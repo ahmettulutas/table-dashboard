@@ -15,7 +15,20 @@ module.exports = {
         layout: "auto 1fr"
       },
       colors: {
-        primaryGray: "#EFEFEF"
+        primaryGrayText: "#808191",
+        primaryGray: "#EFEFEF",
+        primaryBlue: "#4F3FF0",
+        primaryOrange: "#FFBC99",
+        successLight: "#EAFAE4",
+        success: "#4FBF67",
+        error: "#FF4D4D",
+        errorLight: "#FFE7E4",
+        info: "#FEA500",
+        infoLight: "#FFECCF",
+        secondary: "#8F4DF4",
+        darkBlue: "#244CB2",
+        lightBlue: "#0069F6",
+        bgGray: "#efefefcc"
       }
     },
     container: {

@@ -1,7 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
+@layer components {
+	.btn-primary {
+		@apply py-2 px-4 bg-primaryBlue flex text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+	}
+}
+input[type='checkbox'] {
+	accent-color: #4f3ff0;
+}
 .custom-scrollbar::-webkit-scrollbar {
 	height: 5px;
 }
