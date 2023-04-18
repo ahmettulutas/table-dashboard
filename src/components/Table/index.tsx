@@ -1,27 +1,31 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppSelector } from "~/utils/hooks";
+import { useAppDispatch, useAppSelector } from "~/utils/hooks";
 import Tracking from "~/assets/icons/tracking.svg";
 import { enums } from "~/lib/enums";
 import StatusBadge from "../UIComponents/StatusBadge";
+import { selectFilteredPosts } from "~/store/api/redux/posts/selectors";
+import { setSelectedRows } from "~/store/api/redux/common";
+import { selectedItems } from "~/store/api/redux/common/selectors";
 
 const Table:FunctionComponent = () => {
-  const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
-  const data = useAppSelector(state => state.postSlice.posts.data?.response.datas);
+  const data = useAppSelector(selectFilteredPosts);
+  const dispatch = useAppDispatch();
+  const selectedRows = useAppSelector(selectedItems);
   const { t } = useTranslation();
 
   const toggleRow = (id: string) => {
-    setSelectedItems(prev => prev.includes(id) ? prev.filter(item => item !== id) : ([...prev, id]));
+    dispatch(setSelectedRows(selectedRows.includes(id) ? selectedRows.filter(item => item !== id) : ([...selectedRows, id])));
   };
   const toggleAllRows = () => {
-    setSelectedItems(prev => (prev.length === data?.length ? [] : data?.map(item => item.number) ?? []));
+    dispatch(setSelectedRows((selectedRows.length === data?.length ? [] : data?.map(item => item.number) ?? [])));
   };
 
   const generatedRows = data?.map(item => {
-    const selected = selectedItems.includes(item.number);
+    const selected = selectedRows.includes(item.number);
     return (
-      <tr key={item.number} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <tr key={item.number} className="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <td className="w-4 p-3">
           <div className="flex items-center">
             <input
@@ -60,9 +64,9 @@ const Table:FunctionComponent = () => {
 
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg h-full">
-      <div>
-        <table className="w-full text-sm text-left text-gray-900 font-semibold dark:text-white">
+    <div className="relative overflow-x-auto h-full">
+      <div className="h-2/3 relative">
+        <table className="w-full text-sm text-left text-gray-900 font-semibold dark:text-white overflow-hidden">
           <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 text-primaryGrayText dark:text-white">
             <tr>
               <th className="w-4 p-3">
@@ -104,40 +108,6 @@ const Table:FunctionComponent = () => {
           </tbody>
         </table>
       </div>
-      <nav className="flex flex-col items-start justify-between p-3 space-y-3 md:flex-row md:items-center md:space-y-0" aria-label="Table navigation">
-        <ul className="inline-flex items-stretch -space-x-px">
-          <li>
-            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center justify-center px-3 py-2 text-sm leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center justify-center px-3 py-2 text-sm leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-          </li>
-          <li>
-            <a href="#" aria-current="page" className="z-10 flex items-center justify-center px-3 py-2 text-sm leading-tight border text-primary-600 bg-primary-50 border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center justify-center px-3 py-2 text-sm leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center justify-center px-3 py-2 text-sm leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
-          </li>
-          <li>
-            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <span className="sr-only">Next</span>
-              <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
 
   );

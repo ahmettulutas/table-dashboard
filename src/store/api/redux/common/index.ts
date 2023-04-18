@@ -4,7 +4,9 @@ import { CommonReducers } from "./types";
 
 const initialState: CommonReducers = {
   isDarkTheme: false,
-  lang: "tr"
+  lang: "tr",
+  selectedFilter: undefined,
+  selectedItems: []
 };
 
 const commonSlice = createSlice({
@@ -13,5 +15,5 @@ const commonSlice = createSlice({
   reducers: { ...actions }
 });
 
-export const { toggleTheme } = commonSlice.actions;
+export const { toggleTheme, setSelectedStatusFilter, setSelectedRows } = commonSlice.actions;
 export default commonSlice.reducer;

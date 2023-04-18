@@ -43,5 +43,10 @@ export default {
   undefined: "Undefined",
   search: "Search",
   createAPost: "Create Post",
-  all: "All"
+  all: "All",
+  posts: "Posts",
+  actions: "Actions",
+  excelDownload: "Download Excel",
+  barcodeDownload: "Download Barcode",
+  updateStatus: "Update Status"
 } as const;

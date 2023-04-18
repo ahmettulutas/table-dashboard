@@ -43,5 +43,10 @@ export default {
   undefined: "Belirsiz",
   search: "Arama",
   createAPost: "Gönderi Oluştur",
-  all: "Tümü"
+  all: "Tümü",
+  posts: "Gönderiler",
+  actions: "Aksiyonlar",
+  excelDownload: "Excel İndir",
+  barcodeDownload: "Barkod İndir",
+  updateStatus: "Durumu Güncelle"
 } as const;

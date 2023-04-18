@@ -9,3 +9,13 @@ declare module "*.png" {
   const src: string
   export default src
 }
+
+interface ObjectConstructor {
+  keys<T>(o: T):
+    T extends object ? (keyof T)[]
+    : T extends number
+    ? []
+    : T extends Array<any> | string
+    ? string[]
+    : never
+}
