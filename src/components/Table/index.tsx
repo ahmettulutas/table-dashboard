@@ -35,12 +35,12 @@ const Table:FunctionComponent = () => {
           {item.number}
         </th>
         <td className="p-3">
-          <Tracking className="m-auto dark:fill-white"/>
+          <Tracking className="m-auto"/>
         </td>
         <td className="p-3">
           {item.sender_name}
         </td>
-        <td className="p-3">
+        <td className="p-3 text-center">
           {item.recipient_name}
         </td>
         <td className="p-3 text-center">
@@ -63,7 +63,7 @@ const Table:FunctionComponent = () => {
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg h-full">
       <div>
         <table className="w-full text-sm text-left text-gray-900 font-semibold dark:text-white">
-          <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 ">
+          <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-700 text-primaryGrayText dark:text-white">
             <tr>
               <th className="w-4 p-3">
                 <div className="flex items-center">
@@ -108,7 +108,6 @@ const Table:FunctionComponent = () => {
         <ul className="inline-flex items-stretch -space-x-px">
           <li>
             <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <span className="sr-only">Previous</span>
               <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>

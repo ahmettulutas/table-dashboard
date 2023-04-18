@@ -8,6 +8,10 @@ export const
       tr: "tr",
       en: "en"
     },
+    sortDirections: {
+      Ascending: "asc",
+      Descending: "desc"
+    },
     postStatus: {
       1: "toBePickedUp",
       2: "delivered",

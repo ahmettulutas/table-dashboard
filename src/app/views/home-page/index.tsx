@@ -15,6 +15,7 @@ const HomePage:React.FC = () => {
           <LoadingSpinner />
           :
           <>
+            <h1 className="my-6 text-2xl text-primaryBlackText dark:text-white">Gönderiler</h1>
             <Table />
             <ErrorModal />
           </>

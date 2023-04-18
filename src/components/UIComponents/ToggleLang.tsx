@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { enums } from "~/lib/enums";
 import useLanguage from "~/lib/translations/translationConfig";
 
 
 const ToggleLang:React.FC = () => {
 
-  const { toggleLang, lang } = useLanguage();
+  const { toggleLang, lang } = useLanguage(),
+    [language, setLanguage] = useState(lang);
   return (
-    <div className="flex gap-1 mx-2 cursor-pointer">
-      <p className={`${lang === enums.langs.en ? "text-yellow-500 underline" : ""} transition-all duration-200`} onClick={() => toggleLang("en")}>EN</p>
+    <div className="flex gap-1 mx-2 cursor-pointer items-center">
+      <p className={`${language === enums.langs.en ? "text-primaryBlue underline" : ""} transition-all duration-200 text-xs`} onClick={() => {
+        setLanguage("en");
+        toggleLang("en");
+      }}>EN</p>
       <span>|</span>
-      <p className={`${lang === enums.langs.tr ? "text-yellow-500 underline" : ""} transition-all duration-200`} onClick={() => toggleLang("tr")}>TR</p>
+      <p className={`${language === enums.langs.tr ? "text-primaryBlue underline" : ""} transition-all duration-200 text-xs`} onClick={() => {
+        setLanguage("tr");
+        toggleLang("tr");
+      }}>TR</p>
     </div>
   );
 };

@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: {
         primaryGrayText: "#808191",
+        primaryBlackText: "#1A1D1F",
         primaryGray: "#EFEFEF",
         primaryBlue: "#4F3FF0",
         primaryOrange: "#FFBC99",
@@ -28,7 +29,8 @@ module.exports = {
         secondary: "#8F4DF4",
         darkBlue: "#244CB2",
         lightBlue: "#0069F6",
-        bgGray: "#efefefcc"
+        bgGray: "#efefefcc",
+        bgLightGray: "#F4F4F4"
       }
     },
     container: {

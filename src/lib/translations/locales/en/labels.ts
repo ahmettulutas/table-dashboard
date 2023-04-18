@@ -40,5 +40,8 @@ export default {
   nextDayDelivery: "Next Day Delivery",
   returnPickUp: "Return Pick Up",
   change: "Change",
-  undefined: "Undefined"
+  undefined: "Undefined",
+  search: "Search",
+  createAPost: "Create Post",
+  all: "All"
 } as const;

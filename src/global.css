@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 @layer components {
 	.btn-primary {
-		@apply py-2 px-4 bg-primaryBlue flex text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+		@apply py-2 px-4 gap-2 bg-primaryBlue flex align-middle text-white font-semibold rounded-lg shadow-md hover:bg-lightBlue h-full focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
 	}
 }
 input[type='checkbox'] {

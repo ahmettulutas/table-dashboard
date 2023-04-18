@@ -40,5 +40,8 @@ export default {
   nextDayDelivery: "Ertesi Gün Teslimat",
   returnPickUp: "Geri Alma",
   change: "Değişim",
-  undefined: "Belirsiz"
+  undefined: "Belirsiz",
+  search: "Arama",
+  createAPost: "Gönderi Oluştur",
+  all: "Tümü"
 } as const;
