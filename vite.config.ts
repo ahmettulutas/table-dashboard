@@ -26,8 +26,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://dev.carrtell.co/api",
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, "")
+        changeOrigin: true
       }
     }
   }
