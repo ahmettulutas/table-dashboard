@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "http://dev.carrtell.co/api"
+  to = "http://dev.carrtell.co/api"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}

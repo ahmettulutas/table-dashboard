@@ -32,7 +32,7 @@ const Categories:FunctionComponent = () => {
               countedData.map(item => (
                 <Button
                   onClick={() => dispatch(setSelectedStatusFilter(item.key))}
-                  customStyles={`${item.key === selectedFilter ? "btn-primary": "btn-gray"} min-w-fit text-xs`} key={item.id} id={item.id}><span>{`(${item.length})`}</span></Button>
+                  customStyles={`${item.key === selectedFilter ? "btn-primary": "btn-gray"} min-w-fit text-xs`} key={item.id} id={item.id}><span>{`(${item.length ?? ""})`}</span></Button>
               ))
             }
           </div>

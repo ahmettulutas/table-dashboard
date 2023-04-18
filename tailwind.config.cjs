@@ -19,6 +19,7 @@ module.exports = {
         primaryBlackText: "#1A1D1F",
         primaryGray: "#EFEFEF",
         primaryBlue: "#4F3FF0",
+        darkPrimaryBlue: "#7264F0",
         primaryOrange: "#FFBC99",
         successLight: "#EAFAE4",
         success: "#4FBF67",
