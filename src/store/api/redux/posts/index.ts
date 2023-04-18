@@ -2,6 +2,8 @@ import { createReducer, SerializedError } from "@reduxjs/toolkit";
 import { createInitialApiState } from "../redux-builders";
 import { postThunks } from "./actions";
 import { Error } from "../../types";
+import { AxiosError } from "axios";
+import { ApiError } from "../../axiosservice/types";
 
 
 type PostApiActions = typeof postThunks
@@ -9,7 +11,7 @@ type PostState = {
   [endpoint in keyof PostApiActions]: {
     data?: ReturnType<PostApiActions[endpoint]["post"]["fulfilled"]>["payload"]
     loading?: boolean
-    error?: SerializedError | Error
+    error?: AxiosError | Error | ApiError
   }
 }
 

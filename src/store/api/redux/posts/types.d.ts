@@ -1,4 +1,5 @@
 import { enums, Enums } from "~/lib/enums"
+import { ApiError } from "../../axiosservice/types"
 import { RequestModel } from "../../types"
 
 export type PostResponse =  {
@@ -6,11 +7,13 @@ export type PostResponse =  {
     status: number
     response: Response
     message: string
+    error:AxiosError<ApiError> | ApiError | null;
 }
 
 export type Response = {
     datas: Post[]
-    totalRecords: number
+    totalRecords: number,
+
 }
 export type PostStatus = keyof typeof enums.postStatus;
 export type PostType = keyof typeof enums.postType;

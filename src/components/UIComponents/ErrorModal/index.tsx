@@ -28,7 +28,7 @@ const ErrorModal:React.FC = () => {
                     <div className="relative p-6 flex-auto">
                       <Error className="w-20 h-auto m-auto"/>
                       <p className="my-4 text-lg leading-relaxed text-center">
-                        {error?.response?.data?.message || error?.message}
+                        {error?.message}
                       </p>
                     </div>
                   </div>
