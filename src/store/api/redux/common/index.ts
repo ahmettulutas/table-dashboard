@@ -6,7 +6,8 @@ const initialState: CommonReducers = {
   isDarkTheme: false,
   lang: "tr",
   selectedFilter: undefined,
-  selectedItems: []
+  selectedItems: [],
+  searchQuery: ""
 };
 
 const commonSlice = createSlice({
@@ -15,5 +16,5 @@ const commonSlice = createSlice({
   reducers: { ...actions }
 });
 
-export const { toggleTheme, setSelectedStatusFilter, setSelectedRows } = commonSlice.actions;
+export const { toggleTheme, setSelectedStatusFilter, setSelectedRows, setSearchQuery } = commonSlice.actions;
 export default commonSlice.reducer;

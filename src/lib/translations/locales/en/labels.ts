@@ -48,5 +48,7 @@ export default {
   actions: "Actions",
   excelDownload: "Download Excel",
   barcodeDownload: "Download Barcode",
-  updateStatus: "Update Status"
+  updateStatus: "Update Status",
+  list: "List",
+  searchInTable: "Search in table"
 } as const;

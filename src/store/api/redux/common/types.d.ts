@@ -3,4 +3,5 @@ export type CommonReducers = {
   lang: Enums["langs"],
   selectedFilter: keyof Enums["postStatus"] | undefined,
   selectedItems : Array<string>
+  searchQuery: string
 }

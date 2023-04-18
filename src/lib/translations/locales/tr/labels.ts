@@ -48,5 +48,7 @@ export default {
   actions: "Aksiyonlar",
   excelDownload: "Excel İndir",
   barcodeDownload: "Barkod İndir",
-  updateStatus: "Durumu Güncelle"
+  updateStatus: "Durumu Güncelle",
+  list: "Listele",
+  searchInTable: "Tabloda ara"
 } as const;

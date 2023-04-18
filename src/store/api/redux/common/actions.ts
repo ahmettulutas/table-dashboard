@@ -11,6 +11,9 @@ const actions = {
   },
   setSelectedRows: (state:CommonReducers, action:PayloadAction<Array<string>>) => {
     state.selectedItems = action?.payload;
+  },
+  setSearchQuery: (state:CommonReducers, action:PayloadAction<string>) => {
+    state.searchQuery = action.payload;
   }
 };
 

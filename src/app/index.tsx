@@ -9,7 +9,7 @@ const HomePage = React.lazy(() => import("./views/home-page"));
 const App = () => {
 
   useEffect(() => {
-    getPosts({ offset: 1, limit: 110 });
+    getPosts({ offset: 1, limit: 100 });
   }, []);
 
   return (
