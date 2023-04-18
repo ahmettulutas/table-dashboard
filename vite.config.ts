@@ -22,11 +22,12 @@ export default defineConfig({
       "~": resolve(__dirname, "src")
     }
   },
-  css: {
-    preprocessorOptions: {
-      less: {
-        modifyVars: {},
-        javascriptEnabled: true
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://dev.carrtell.co/api",
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, "")
       }
     }
   }

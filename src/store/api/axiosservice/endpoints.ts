@@ -1,5 +1,5 @@
 const endpoints = {
-  base: "http://dev.carrtell.co/api",
+  base: "/api",
   posts: "Datas/getPosts"
 };
 export default endpoints;
