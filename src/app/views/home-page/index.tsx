@@ -7,6 +7,7 @@ import ErrorModal from "~/components/UIComponents/ErrorModal";
 
 const HomePage:React.FC = () => {
   const { t } = useTranslation();
+
   return (
     <Layout>
       <>

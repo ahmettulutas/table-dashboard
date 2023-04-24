@@ -27,7 +27,7 @@ const SearchBar:React.FC = () => {
       <button className={`absolute
       transition-all duration-200
       p-2 rounded-lg
-      inset-y-0 left-0 flex items-center z-50 cursor-pointer
+      inset-y-0 left-0 flex items-center z-30 cursor-pointer
       hover:text-black
       ${open ? "dark:hover:text-white" : "bg-bgLightGray "}`}>
         <SearchIcon onClick={() => {

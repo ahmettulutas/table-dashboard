@@ -21,13 +21,5 @@ export default defineConfig({
     alias: {
       "~": resolve(__dirname, "src")
     }
-  },
-  server: {
-    proxy: {
-      "/api": {
-        target: "http://dev.carrtell.co/api",
-        changeOrigin: true
-      }
-    }
   }
 });
