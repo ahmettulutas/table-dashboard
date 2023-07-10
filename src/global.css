@@ -1,6 +1,12 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+:root {
+	--highlight: #e8fa20;
+	--primary-blue: #4f3ff0;
+	--primary-gray: ;
+}
+
 @layer components {
 	.btn-primary {
 		@apply py-2 px-4 gap-2 bg-primaryBlue flex align-middle text-white font-semibold hover:bg-lightBlue h-full focus:outline-none focus:ring-2 focus:ring-lightBlue focus:ring-opacity-75 rounded-xl;
@@ -13,36 +19,33 @@
 	}
 }
 input[type='checkbox'] {
-	accent-color: #4f3ff0;
+	accent-color:var(--primary-blue);
 }
 .custom-scrollbar::-webkit-scrollbar {
 	height: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-	border-radius: 20px;
+	border-radius: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
 	background-color: rgb(0 0 0 / 0.05);
-	width: 20px;
+	width: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-	background: #4f3ff0;
+	background: var(--primary-blue);
 }
 .highlighted {
 	position: relative;
-	z-index: 2;
 }
 .highlighted::before {
-	background-color: #f7db3d;
+	background-color: var(--highlight);
 	content: '';
 	position: absolute;
 	width: calc(100% + 4px);
-	height: 30%;
+	height: 35%;
 	left: -2px;
 	transform: translateY(50%);
-	z-index: -1;
-	transform: rotate(-1.5deg);
+	opacity:0.6;
+	transform: rotate(-0.9deg);
 }
-.dark .highlighted::before {
-	background-color: #a08906;
-}
+

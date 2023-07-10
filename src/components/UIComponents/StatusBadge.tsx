@@ -14,7 +14,7 @@ const StatusBadge:FunctionComponent<StatusProps> = ({ status }) => {
   const { bgColor, textColor } = getColor(status);
   return (
     <div className={`flex gap-1 align-middle justify-center p-2 ${bgColor} ${textColor} rounded-lg cursor-pointer text-center` }>{t(`lbl.${enums.postStatus[status]}`)}
-      <Arrow className="w-4 h-4 my-auto text-black dark:text-inherit"/>
+      <Arrow className={`w-4 h-4 my-auto ${textColor} dark:text-inherit`}/>
     </div>
   );
 };

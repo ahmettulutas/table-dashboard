@@ -9,7 +9,7 @@ const NotFound:React.FC = () => {
   const navigate = useNavigate();
   return (
     <Layout>
-      <div className="flex justify-center flex-col container h-full">
+      <div className="flex justify-center flex-col h-full">
         <Error className="max-w-full m-auto" />
         <button className="m-auto shadow-sm rounded-md bg-yellow-500 p-3 uppercase text-white" onClick={() => navigate(-1)}>{t("lbl.goBack")}</button>
       </div>

@@ -43,4 +43,4 @@ const LimitDropdown:FunctionComponent = () => {
   );
 };
 
-export default LimitDropdown;
+export default React.memo(LimitDropdown);

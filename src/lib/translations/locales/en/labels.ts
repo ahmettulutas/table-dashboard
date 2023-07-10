@@ -1,5 +1,4 @@
 export default {
-  createPost: "Create Post",
   deliveries: "Deliveries",
   dashboard: "Dashboard",
   users: "Users",
@@ -42,7 +41,7 @@ export default {
   change: "Change",
   undefined: "Undefined",
   search: "Search",
-  createAPost: "Create Post",
+  createAPost: "Create a Post",
   all: "All",
   posts: "Posts",
   actions: "Actions",

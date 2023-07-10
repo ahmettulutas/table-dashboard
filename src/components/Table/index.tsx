@@ -36,36 +36,20 @@ const Table:FunctionComponent = () => {
             type="checkbox"
             className="checkbox-primary"
             checked={selected}>
-
           </input>
         </td>
-        <td scope="row" className="p-3 font-medium text-primaryBlue dark:text-darkPrimaryBlue whitespace-nowrap">
-          {item.number}
-        </td>
-        <td className="p-3">
-          <Tracking className="m-auto"/>
-        </td>
+        <td scope="row" className="p-3 font-medium text-primaryBlue dark:text-darkPrimaryBlue whitespace-nowrap">{item.number}</td>
+        <td className="p-3"><Tracking className="m-auto"/></td>
         <td className={`p-3 ${searchTerm && item.sender_name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ? "highlighted" : ""}`}>
           {item.sender_name}
         </td>
-        <td className="p-3 text-center">
-          {item.recipient_name}
-        </td>
-        <td className="p-3 text-center">
-          {item.post_desi}
-        </td>
-        <td className="p-3">
-          {t(`lbl.${enums.postType[item.post_type]}`)}
-        </td>
-        <td className="p-3">
-          <StatusBadge status={item.post_status} />
-        </td>
-        <td className="p-3">
-          {item.created_at}
-        </td>
+        <td className={`p-3 ${searchTerm && item.recipient_name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ? "highlighted" : ""}`}>{item.recipient_name}</td>
+        <td className="p-3 text-center">{item.post_desi}</td>
+        <td className="p-3">{t(`lbl.${enums.postType[item.post_type]}`)}</td>
+        <td className="p-3"><StatusBadge status={item.post_status} /></td>
+        <td className="p-3">{item.created_at}</td>
       </tr>);
   });
-
 
   return (
     <div className="relative h-full ">
@@ -86,30 +70,14 @@ const Table:FunctionComponent = () => {
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
                     </div>
                   </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.orderNumber").toLocaleUpperCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.tracking").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.sender").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.receiver").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.desi").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.type").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.sendStatus").toLocaleLowerCase("tr-TR")}
-                  </th>
-                  <th className="px-4 py-3 text-center">
-                    {t("lbl.sendDate").toLocaleLowerCase("tr-TR")}
-                  </th>
+                  <th className="px-4 py-3 text-center">{t("lbl.orderNumber").toLocaleUpperCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.tracking").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.sender").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.receiver").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.desi").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.type").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.sendStatus").toLocaleLowerCase("tr-TR")}</th>
+                  <th className="px-4 py-3 text-center">{t("lbl.sendDate").toLocaleLowerCase("tr-TR")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -118,9 +86,7 @@ const Table:FunctionComponent = () => {
             </table>
           </div>
       }
-
     </div>
-
   );
 };
 

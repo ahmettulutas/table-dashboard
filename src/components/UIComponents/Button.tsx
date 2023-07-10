@@ -1,14 +1,14 @@
 import React, { ButtonHTMLAttributes, FunctionComponent, ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 
-type PrimaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   id:string,
   icon?:React.FC<React.SVGProps<SVGElement>>,
   customStyles?: string,
   children?: ReactElement
 }
 
-const PrimaryButton:FunctionComponent<PrimaryButtonProps> = ({ id, icon, customStyles, children, ...rest }) => {
+const Button:FunctionComponent<ButtonProps> = ({ id, icon, customStyles, children, ...rest }) => {
   const { t } = useTranslation();
   const Icon = icon;
 
@@ -21,4 +21,4 @@ const PrimaryButton:FunctionComponent<PrimaryButtonProps> = ({ id, icon, customS
   );
 };
 
-export default PrimaryButton;
+export default Button;

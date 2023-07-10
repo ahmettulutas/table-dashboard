@@ -1,5 +1,4 @@
 export default {
-  createPost: "Gönderi Oluştur",
   deliveries: "Gönderiler",
   dashboard: "Yönetim Paneli",
   users: "Kullanıcılar",

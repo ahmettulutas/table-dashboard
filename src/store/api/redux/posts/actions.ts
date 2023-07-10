@@ -4,7 +4,7 @@ import { PostRequest, PostResponse } from "./types";
 
 const postThunks = {
   posts: {
-    post: createRequestThunk<PostRequest, PostResponse>("post", "posts", endpoints.posts)
+    get: createRequestThunk<PostRequest, PostResponse>("get", "posts", endpoints.posts)
   }
 };
 
